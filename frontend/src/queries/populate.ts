@@ -14,7 +14,7 @@ export const headerQuery = {
     menu: {
       populate: {
         menuItems: {
-          fields: ['id', 'url'],
+          fields: ['id', 'url', 'label'],
         },
       },
     },

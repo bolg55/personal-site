@@ -36,8 +36,6 @@ const Page: ({}: PageProps) => Promise<JSX.Element> = async () => {
         socialLinks={social}
         menu={menu}
       />
-      <h1>Page</h1>
-      <pre>{JSON.stringify(social, null, 2)}</pre>
     </div>
   );
 };
