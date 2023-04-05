@@ -30,7 +30,6 @@ const Page: ({}: PageProps) => Promise<JSX.Element> = async () => {
     <div>
       <Header
         logoUrl={logoUrl}
-        link={logo.link}
         alt={logo.alt}
         showLogo={showLogo}
         socialLinks={social}

@@ -6,7 +6,7 @@ interface LogoProps {
 }
 
 const Logo = ({ alt, src }: LogoProps) => (
-  <Image alt={alt} src={src} width={100} height={100} />
+  <Image alt={alt} src={src} width={80} height={80} priority />
 );
 
 export default Logo;
