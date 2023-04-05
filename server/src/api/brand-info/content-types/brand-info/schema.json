@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "brand_infos",
+  "info": {
+    "singularName": "brand-info",
+    "pluralName": "brand-infos",
+    "displayName": "BrandInfo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "socialLinks": {
+      "displayName": "socialLink",
+      "type": "component",
+      "repeatable": true,
+      "component": "config.social-link"
+    },
+    "brandEmail": {
+      "type": "email",
+      "required": true
+    },
+    "brandName": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string"
+    }
+  }
+}

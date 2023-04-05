@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_layout_jobs",
+  "info": {
+    "displayName": "Job"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "company": {
+      "type": "string",
+      "required": true
+    },
+    "fromDate": {
+      "type": "string",
+      "required": true
+    },
+    "toDate": {
+      "type": "string",
+      "required": true
+    },
+    "overview": {
+      "type": "richtext"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

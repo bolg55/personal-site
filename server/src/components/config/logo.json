@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_config_logos",
+  "info": {
+    "displayName": "Logo"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "alt": {
+      "type": "string",
+      "default": "Logo"
+    },
+    "link": {
+      "type": "string",
+      "default": "/"
+    }
+  }
+}
