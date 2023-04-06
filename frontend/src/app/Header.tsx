@@ -30,7 +30,7 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
   const { menuItems } = menu.data.attributes;
 
   return (
-    <header className='bg-white text-black'>
+    <header className='bg-gray-700'>
       <div className='flex justify-between mx-8 py-4'>
         {showLogo && <Logo src={logoUrl} alt={alt} />}
         <nav className='flex items-center space-x-10'>

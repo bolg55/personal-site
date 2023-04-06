@@ -1,8 +1,9 @@
 import './globals.css';
 import { fetchAPI } from '@/lib/api';
 import { getStrapiMedia } from '@/lib/media';
-import { headerQuery } from '@/queries/populate';
+import { footerQuery, headerQuery } from '@/queries/populate';
 import Header from './Header';
+import Footer from './Footer';
 
 export const metadata = {
   title: 'Create Next App',
@@ -14,10 +15,24 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const data = await fetchAPI('/header', headerQuery);
+  const [headerData, footerData] = await Promise.all([
+    fetchAPI('/header', headerQuery),
+    fetchAPI('/brand-info', footerQuery),
+  ]);
 
-  const { menu, showLogo, Logo: logo, socialLinks } = data.data.attributes;
+  const {
+    menu,
+    showLogo,
+    Logo: logo,
+    socialLinks: headerSocialLinks,
+  } = headerData.data.attributes;
   const logoUrl = getStrapiMedia(logo.image);
+
+  const {
+    brandEmail,
+    brandName,
+    socialLinks: footerSocialLinks,
+  } = footerData.data.attributes;
 
   return (
     <html lang='en'>
@@ -26,10 +41,16 @@ export default async function RootLayout({
           logoUrl={logoUrl}
           alt={logo.alt}
           showLogo={showLogo}
-          socialLinks={socialLinks}
+          socialLinks={headerSocialLinks}
           menu={menu}
         />
         {children}
+
+        <Footer
+          brandEmail={brandEmail}
+          brandName={brandName}
+          socialLinks={footerSocialLinks}
+        />
       </body>
     </html>
   );

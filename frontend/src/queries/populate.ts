@@ -27,3 +27,13 @@ export const headerQuery = {
     },
   },
 };
+
+// Retrieve the footer data
+export const footerQuery = {
+  populate: {
+    fields: ['brandEmail, brandName'],
+    socialLinks: {
+      populate: '*',
+    },
+  },
+};
