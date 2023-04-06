@@ -19,7 +19,7 @@ const SocialIcon = ({
   background,
 }: SocialIconProps) => {
   return (
-    <Link href={href}>
+    <Link href={href} target={'_blank'}>
       <ReactIcon
         icon={iconName}
         className={`${color} ${width} ${height} ${background} hover:opacity-80`}
