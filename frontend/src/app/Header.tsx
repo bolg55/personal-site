@@ -1,6 +1,7 @@
+import { IconName } from '@/components/Icon';
 import Logo from '@/components/Logo';
-import SocialIcon from '@/components/SocialIcon';
-import Link from 'next/link';
+import MenuItems from '@/components/MenuItems';
+import SocialMenu from '@/components/SocialMenu';
 
 interface HeaderProps {
   logoUrl: string;
@@ -19,7 +20,7 @@ interface HeaderProps {
   };
   socialLinks: {
     id: number;
-    icon: string;
+    iconName: IconName;
     link: string;
     socialMedia: string;
   }[];
@@ -34,28 +35,17 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
         {showLogo && <Logo src={logoUrl} alt={alt} />}
         <nav className='flex items-center space-x-10'>
           <div>
-            <ul className='flex space-x-2 capitalize'>
-              {menuItems.map((item) => (
-                <li key={item.id}>
-                  <Link href={item.url}>{item.label}</Link>
-                </li>
-              ))}
-            </ul>
+            <MenuItems
+              menuItems={menuItems}
+              className='flex space-x-2 capitalize'
+            />
           </div>
           <div>
-            <ul className='flex space-x-2'>
-              {socialLinks.map((item) => (
-                <li key={item.id}>
-                  <SocialIcon
-                    href={item.link}
-                    src={item.icon}
-                    alt={item.socialMedia}
-                    width={25}
-                    height={25}
-                  />
-                </li>
-              ))}
-            </ul>
+            <SocialMenu
+              socialLinks={socialLinks}
+              className='flex space-x-2'
+              color='text-green-500'
+            />
           </div>
         </nav>
       </div>

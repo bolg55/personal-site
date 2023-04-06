@@ -20,7 +20,7 @@ export const headerQuery = {
     },
     socialLinks: {
       populate: {
-        icon: {
+        iconName: {
           fields: ['url'],
         },
       },
