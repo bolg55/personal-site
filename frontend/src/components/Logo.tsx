@@ -18,15 +18,15 @@ const Logo = ({ alt, src }: LogoProps) => (
       width={80}
       height={80}
       priority
-      className='items-center justify-center w-18 h-18 rounded-full p-0.5 border shadow-md'
+      className='items-center bg-dark justify-center w-16 h-16 rounded-full p-0.5 border shadow-md'
       whileHover={{
         backgroundColor: [
-          '#fff',
+          '#1b1b1b',
           'rgba(131,58,180,1)',
           'rgba(253,29,29,1)',
           'rgba(252,176,69,1)',
           'rgba(131,58,180,1)',
-          '#fff',
+          '#1b1b1b',
         ],
         transition: { duration: 2, repeat: Infinity },
       }}

@@ -1,5 +1,7 @@
-import Link from 'next/link';
+'use client';
+
 import { IconName, ReactIcon } from './Icon';
+import { motion } from 'framer-motion';
 
 interface SocialMenuProps {
   socialLinks: {
@@ -14,11 +16,11 @@ interface SocialMenuProps {
 const SocialMenu = ({ socialLinks, className }: SocialMenuProps) => (
   <ul className='flex space-x-2 items-center justify-center'>
     {socialLinks.map((item) => (
-      <li key={item.id}>
-        <Link href={item.link} target={'_blank'}>
+      <motion.li key={item.id} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }}>
+        <a href={item.link} target={'_blank'}>
           <ReactIcon icon={item.iconName} className={className} />
-        </Link>
-      </li>
+        </a>
+      </motion.li>
     ))}
   </ul>
 );

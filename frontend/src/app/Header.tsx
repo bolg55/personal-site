@@ -47,7 +47,7 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
       <nav>
         <SocialMenu
           socialLinks={socialLinks}
-          className='h-10 w-10 text-primaryDark bg-dark rounded-lg shadow-lg flex items-center justify-center p-0.5'
+          className='h-8 w-8 text-primaryDark bg-white shadow-lg items-center justify-center p-0.5 rounded-full'
         />
       </nav>
     </header>
