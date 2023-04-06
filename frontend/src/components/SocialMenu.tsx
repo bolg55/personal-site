@@ -1,5 +1,5 @@
-import { IconName } from './Icon';
-import SocialIcon from './SocialIcon';
+import Link from 'next/link';
+import { IconName, ReactIcon } from './Icon';
 
 interface SocialMenuProps {
   socialLinks: {
@@ -11,11 +11,13 @@ interface SocialMenuProps {
   color?: string;
 }
 
-const SocialMenu = ({ socialLinks, className, color }: SocialMenuProps) => (
-  <ul className={className}>
+const SocialMenu = ({ socialLinks, className }: SocialMenuProps) => (
+  <ul className='flex space-x-2 items-center justify-center'>
     {socialLinks.map((item) => (
       <li key={item.id}>
-        <SocialIcon iconName={item.iconName} href={item.link} color={color} />
+        <Link href={item.link} target={'_blank'}>
+          <ReactIcon icon={item.iconName} className={className} />
+        </Link>
       </li>
     ))}
   </ul>

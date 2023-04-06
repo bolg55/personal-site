@@ -1,20 +1,35 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { motion } from 'framer-motion';
 interface LogoProps {
   alt: string;
   src: string;
 }
 
+const MotionImage = motion(Image);
+
 const Logo = ({ alt, src }: LogoProps) => (
   <Link href='/'>
-    <Image
+    <MotionImage
       alt={alt}
       src={src}
-      width={100}
-      height={100}
+      width={80}
+      height={80}
       priority
-      className='items-center justify-center rounded-full p-1.5 border shadow-md bg-green-500/25'
+      className='items-center justify-center w-18 h-18 rounded-full p-0.5 border shadow-md'
+      whileHover={{
+        backgroundColor: [
+          '#fff',
+          'rgba(131,58,180,1)',
+          'rgba(253,29,29,1)',
+          'rgba(252,176,69,1)',
+          'rgba(131,58,180,1)',
+          '#fff',
+        ],
+        transition: { duration: 2, repeat: Infinity },
+      }}
     />
   </Link>
 );

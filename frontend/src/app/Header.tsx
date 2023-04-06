@@ -30,25 +30,26 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
   const { menuItems } = menu.data.attributes;
 
   return (
-    <header className='bg-gray-700'>
-      <div className='flex justify-between mx-8 py-4'>
-        {showLogo && <Logo src={logoUrl} alt={alt} />}
-        <nav className='flex items-center space-x-10'>
-          <div>
-            <MenuItems
-              menuItems={menuItems}
-              className='flex space-x-2 capitalize'
-            />
-          </div>
-          <div>
-            <SocialMenu
-              socialLinks={socialLinks}
-              className='flex space-x-2'
-              color='text-green-500'
-            />
-          </div>
-        </nav>
-      </div>
+    <header className='w-full px-32 py-8 font-medium flex items-center justify-between'>
+      <nav className=''>
+        <MenuItems
+          menuItems={menuItems}
+          className='flex space-x-4 capitalize'
+        />
+      </nav>
+
+      {showLogo && (
+        <div className='absolute left-[50%] top-2 translate-x-[-50%]'>
+          <Logo src={logoUrl} alt={alt} />
+        </div>
+      )}
+
+      <nav>
+        <SocialMenu
+          socialLinks={socialLinks}
+          className='h-10 w-10 text-primaryDark bg-dark rounded-lg shadow-lg flex items-center justify-center p-0.5'
+        />
+      </nav>
     </header>
   );
 };
