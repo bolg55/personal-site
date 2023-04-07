@@ -18,7 +18,7 @@ const Logo = ({ alt, src }: LogoProps) => (
       width={80}
       height={80}
       priority
-      className='items-center bg-dark justify-center w-16 h-16 rounded-full p-0.5 border shadow-md'
+      className='items-center bg-dark justify-center w-16 h-16 rounded-full p-0.5 border dark:border-2 dark:border-light shadow-md'
       whileHover={{
         backgroundColor: [
           '#1b1b1b',

@@ -14,7 +14,7 @@ interface FooterProps {
 
 const Footer = ({ brandName, socialLinks }: FooterProps) => {
   return (
-    <footer className='w-full px-32 py-8 font-medium flex items-center justify-between capitalize border-t-2 border-dark'>
+    <footer className='w-full px-32 py-8 font-medium flex items-center justify-between capitalize border-t-2 border-dark dark:border-light'>
       <p>
         &copy; {new Date().getFullYear()} {brandName}. All rights reserved.
       </p>
@@ -23,7 +23,7 @@ const Footer = ({ brandName, socialLinks }: FooterProps) => {
 
       <SocialMenu
         socialLinks={socialLinks}
-        className='flex space-x-2 w-8 h-8 text-gray-500'
+        className='h-6 w-6 text-dark dark:text-light'
       />
     </footer>
   );

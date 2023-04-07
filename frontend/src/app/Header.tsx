@@ -32,26 +32,20 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
 
   return (
     <header className='w-full px-32 py-8 font-medium flex items-center justify-between'>
-      <nav className=''>
-        <MenuItems
-          menuItems={menuItems}
-          className='flex space-x-4 capitalize'
-        />
-      </nav>
+      <MenuItems menuItems={menuItems} className='flex space-x-4 capitalize' />
 
       {showLogo && (
         <div className='absolute left-[50%] top-2 translate-x-[-50%]'>
           <Logo src={logoUrl} alt={alt} />
         </div>
       )}
-
-      <nav>
+      <div className='flex space-x-6'>
         <SocialMenu
           socialLinks={socialLinks}
-          className='h-6 w-6 text-dark bg-white shadow-lg items-center justify-center  rounded-full'
+          className='h-6 w-6 text-dark dark:text-light'
         />
-      </nav>
-      <ThemeSwitcher />
+        <ThemeSwitcher />
+      </div>
     </header>
   );
 };
