@@ -1,6 +1,5 @@
 import AnimatedText from '@/components/AnimatedText';
 import Image from 'next/image';
-import Link from 'next/link';
 import HeroButton from './HeroButton';
 
 interface HeroProps {
@@ -8,6 +7,13 @@ interface HeroProps {
   hero: {
     callToAction: string;
     subheading?: string;
+    image: {
+      data: {
+        attributes: {
+          alternativeText: string;
+        };
+      };
+    };
     buttons: {
       id: number;
       label: string;
@@ -18,22 +24,24 @@ interface HeroProps {
 }
 
 const Hero = ({ heroImage, hero }: HeroProps) => {
+  const { callToAction, subheading, buttons } = hero;
+  const { alternativeText } = hero.image.data.attributes;
   return (
     <>
       <div className='w-1/2'>
         <Image
           src={heroImage}
-          alt='hero image'
+          alt={alternativeText}
           width={1000}
           height={1000}
           priority
         />
       </div>
       <div className='w-1/2 flex flex-col items-center self-center'>
-        <AnimatedText text={hero.callToAction} className='text-left' />
-        <p className='my-4 text-base font-medium'>{hero.subheading}</p>
+        <AnimatedText text={callToAction} className='text-left' />
+        <p className='my-4 text-base font-medium'>{subheading}</p>
         <div className='flex items-center self-start mt-2 space-x-2'>
-          {hero.buttons.map((link) => (
+          {buttons.map((link) => (
             <HeroButton key={link.id} links={link} isPrimary={link.isPrimary} />
           ))}
         </div>

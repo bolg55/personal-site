@@ -2,6 +2,7 @@ import { IconName } from '@/components/Icon';
 import Logo from '@/components/Logo';
 import MenuItems from '@/components/MenuItems';
 import SocialMenu from '@/components/SocialMenu';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
 
 interface HeaderProps {
   logoUrl: string;
@@ -47,9 +48,10 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
       <nav>
         <SocialMenu
           socialLinks={socialLinks}
-          className='h-8 w-8 text-primaryDark bg-white shadow-lg items-center justify-center p-0.5 rounded-full'
+          className='h-6 w-6 text-dark bg-white shadow-lg items-center justify-center  rounded-full'
         />
       </nav>
+      <ThemeSwitcher />
     </header>
   );
 };

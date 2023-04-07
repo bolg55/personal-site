@@ -7,6 +7,7 @@ import Header from './Header';
 import Footer from './Footer';
 import { Suspense } from 'react';
 import SkeletonLoader from '@/components/SkeletonLoader';
+import Providers from './Providers';
 
 export const metadata = {
   title: 'Kellen Bolger | Full-Stack Developer',
@@ -44,27 +45,28 @@ export default async function RootLayout({
   } = footerData.data.attributes;
 
   return (
-    <html
-      lang='en'
-      className={`${montserrat.variable} bg-light w-full min-h-screen`}
-    >
+    <html lang='en' className={`${montserrat.variable}  w-full min-h-screen`}>
       <body>
-        <Suspense fallback={<SkeletonLoader />}>
-          <Header
-            logoUrl={logoUrl}
-            alt={logo.alt}
-            showLogo={showLogo}
-            socialLinks={headerSocialLinks}
-            menu={menu}
-          />
-        </Suspense>
-        {children}
+        <Providers>
+          <div className='bg-light dark:bg-dark'>
+            <Suspense fallback={<SkeletonLoader />}>
+              <Header
+                logoUrl={logoUrl}
+                alt={logo.alt}
+                showLogo={showLogo}
+                socialLinks={headerSocialLinks}
+                menu={menu}
+              />
+            </Suspense>
+            {children}
 
-        <Footer
-          brandEmail={brandEmail}
-          brandName={brandName}
-          socialLinks={footerSocialLinks}
-        />
+            <Footer
+              brandEmail={brandEmail}
+              brandName={brandName}
+              socialLinks={footerSocialLinks}
+            />
+          </div>
+        </Providers>
       </body>
     </html>
   );

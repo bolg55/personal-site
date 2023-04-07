@@ -48,7 +48,9 @@ const AnimatedText = ({ text, className = '' }: AnimatedTextProps) => {
             variants={singleWord}
             key={`${index}-${word}`}
             className={`${
-              [2, 4].includes(index) ? 'text-primary' : 'text-dark'
+              [2, 4].includes(index)
+                ? 'bg-gradient-to-r from-primaryDark to-primary text-transparent bg-clip-text'
+                : 'text-dark'
             } inline-block `}
           >
             {word}&nbsp;

@@ -14,14 +14,16 @@ interface FooterProps {
 
 const Footer = ({ brandName, socialLinks }: FooterProps) => {
   return (
-    <footer className='flex justify-between  py-4 w-full '>
+    <footer className='w-full px-32 py-8 font-medium flex items-center justify-between capitalize border-t-2 border-dark'>
       <p>
         &copy; {new Date().getFullYear()} {brandName}. All rights reserved.
       </p>
-      ¯\_(ツ)_/¯
+
+      <span className='font-bold'>¯\_(ツ)_/¯</span>
+
       <SocialMenu
         socialLinks={socialLinks}
-        className='flex space-x-2 w-10 h-10'
+        className='flex space-x-2 w-8 h-8 text-gray-500'
       />
     </footer>
   );
