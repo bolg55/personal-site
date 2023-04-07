@@ -39,7 +39,9 @@ const Hero = ({ heroImage, hero }: HeroProps) => {
       </div>
       <div className='w-1/2 flex flex-col items-center self-center'>
         <AnimatedText text={callToAction} className='text-left' />
-        <p className='my-4 text-base font-medium'>{subheading}</p>
+        <p className='my-4 text-base font-medium text-dark dark:text-light'>
+          {subheading}
+        </p>
         <div className='flex items-center self-start mt-2 space-x-2'>
           {buttons.map((link) => (
             <HeroButton key={link.id} links={link} isPrimary={link.isPrimary} />

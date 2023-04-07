@@ -39,7 +39,7 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
           <Logo src={logoUrl} alt={alt} />
         </div>
       )}
-      <div className='flex space-x-6'>
+      <div className='flex space-x-10'>
         <SocialMenu
           socialLinks={socialLinks}
           className='h-6 w-6 text-dark dark:text-light'

@@ -50,7 +50,7 @@ const AnimatedText = ({ text, className = '' }: AnimatedTextProps) => {
             className={`${
               [2, 4].includes(index)
                 ? 'bg-gradient-to-r from-primaryDark to-primary text-transparent bg-clip-text'
-                : 'text-dark'
+                : 'text-dark dark:text-light'
             } inline-block `}
           >
             {word}&nbsp;
