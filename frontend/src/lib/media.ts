@@ -11,6 +11,7 @@ interface Media {
       url: string;
     };
   };
+  url?: string;
 }
 
 export function getStrapiMedia(media: Media) {
@@ -18,3 +19,9 @@ export function getStrapiMedia(media: Media) {
   const imageUrl = url.startsWith('/') ? getStrapiURL(url) : url;
   return imageUrl;
 }
+
+export const getLargeImage = (image: Media) => {
+  const url = image.url;
+  const imageUrl = url?.startsWith('/') ? getStrapiURL(url) : url;
+  return imageUrl;
+};

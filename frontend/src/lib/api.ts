@@ -16,7 +16,11 @@ export const getStrapiURL = (path = '') => {
 
 // Turn the below into a typescript interface or type
 
-interface StrapiOptions extends Omit<RequestInit, 'body'> {}
+interface StrapiOptions {
+  headers?: {
+    'Content-Type': string;
+  };
+}
 
 interface UrlParamsObject {}
 
