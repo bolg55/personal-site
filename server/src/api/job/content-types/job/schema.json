@@ -34,14 +34,6 @@
       "allowedTypes": [
         "files"
       ]
-    },
-    "icon": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
     }
   }
 }
