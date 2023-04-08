@@ -11,6 +11,7 @@ const About = async () => {
           'company',
           'fromDate',
           'toDate',
+          'location',
           'overview',
           'logo',
         ],

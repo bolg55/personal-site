@@ -7,6 +7,7 @@ interface Job {
     company: string;
     fromDate: string;
     toDate: string;
+    location: string;
     overview?: string;
     logo?: {
       url: string;

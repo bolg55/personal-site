@@ -7,6 +7,7 @@ interface Job {
     company: string;
     fromDate: string;
     toDate: string;
+    location: string;
     overview?: string;
     logo?: {
       url: string;
@@ -15,20 +16,20 @@ interface Job {
 }
 
 const Details = ({ job }: Job) => {
-  const { title, company, fromDate, toDate, overview } = job;
+  const { title, company, fromDate, toDate, location, overview } = job;
 
   return (
-    <li>
-      <div className='flex justify-between'>
-        <h3>
+    <li className='my-8 first:mt-0 last:mb-0  mx-auto flex flex-col items-center justify-between'>
+      <div>
+        <h3 className=' font-bold text-2xl'>
           {title}&nbsp;
-          <span className='text-gray-500'>@ {company}</span>
+          <span>@ {company}</span>
         </h3>
-        <span>
-          {fromDate} | {toDate}
+        <span className='capitalize font-medium text-dark/75'>
+          {fromDate}-{toDate} | {location}
         </span>
+        <Markdown markdown={overview!} />
       </div>
-      <Markdown markdown={overview!} />
     </li>
   );
 };
