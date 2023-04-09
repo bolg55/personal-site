@@ -6,6 +6,7 @@ import { motion, useScroll } from 'framer-motion';
 import { useRef } from 'react';
 import Button from './Button';
 import { HiOutlineBriefcase, HiOutlineCloudArrowDown } from 'react-icons/hi2';
+import Link from 'next/link';
 
 interface Job {
   jobs: {
@@ -45,18 +46,26 @@ const Experience = ({ jobs, resume }: Job) => {
           ))}
         </ul>
       </div>
-      <div className='my-16  mx-auto items-center justify-between flex flex-col w-3/5'>
+      <div className='my-16 mx-auto items-center align-middle justify-center flex w-3/5 space-x-6'>
         <Button>
           <a
             href={resume}
             download={true}
             target='_blank'
-            className='flex items-center'
+            className='flex items-center space-x-1'
           >
-            <span className='mr-2'>Resume</span>
-            <HiOutlineCloudArrowDown className='font-medium' />
+            <span>Download Resume</span>
+            <span className='text-2xl '>
+              <HiOutlineCloudArrowDown />
+            </span>
           </a>
         </Button>
+        <Link
+          href='/contact'
+          className='underline underline-offset-2 hover:text-primary dark:hover:text-primaryDark capitalize p-2.5 px-6 rounded-lg text-lg font-semibold transition-all duration-300 ease-in-out'
+        >
+          Contact
+        </Link>
       </div>
     </div>
   );
