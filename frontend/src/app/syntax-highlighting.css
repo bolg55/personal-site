@@ -50,7 +50,7 @@ pre[class*='language-'] {
   padding: 1em; /* this is standard */
   margin: 0; /* this is the default */
   overflow: auto; /* this is standard */
-  border-radius: 0.5em;
+  border-radius: 0 0 0.5em 0.5em;
 }
 
 /* Properties specific to inline code */
@@ -135,11 +135,13 @@ pre[class*='language-'] {
 
 .rehype-code-title {
   padding: 0.5em 1em;
-  margin: 0.5em 0;
+  margin: 0;
   font-size: 0.8em;
   font-weight: bold;
   text-transform: lowercase;
   letter-spacing: 0.1em;
   color: #ffffff;
-  background: #cccccc;
+  background: #1f1f1f;
+  border-radius: 0.5em 0.5em 0 0;
+  border-bottom: #40b4c4 1px solid;
 }

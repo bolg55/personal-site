@@ -5,7 +5,7 @@ interface Path {
   startsWith: (arg0: string) => boolean;
 }
 
-interface Media {
+export interface Media {
   data: {
     attributes: {
       url: string;
