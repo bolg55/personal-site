@@ -37,3 +37,15 @@ export const footerQuery = {
     },
   },
 };
+
+// Retrieve the home page data
+export const homeQuery = {
+  populate: {
+    Hero: {
+      populate: '*',
+    },
+    seo: {
+      populate: '*',
+    },
+  },
+};

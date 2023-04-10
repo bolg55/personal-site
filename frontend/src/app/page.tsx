@@ -1,36 +1,19 @@
 import { fetchAPI } from '@/lib/api';
 import { getLargeImage, getStrapiMedia } from '@/lib/media';
-import { footerQuery, headerQuery } from '@/queries/populate';
+import { footerQuery, headerQuery, homeQuery } from '@/queries/populate';
 import Hero from './Hero';
+import Projects from './Projects';
 
 interface PageProps {}
 
 const Page: ({}: PageProps) => Promise<JSX.Element> = async () => {
-  const homePage = await fetchAPI('/home-page', {
-    populate: {
-      Hero: {
-        populate: '*',
-      },
-      servicesPreview: {
-        populate: '*',
-      },
-      featuredProject: {
-        populate: '*',
-      },
-      postsSelection: {
-        populate: '*',
-      },
-      seo: {
-        populate: '*',
-      },
-    },
-  });
+  const homePage = await fetchAPI('/home-page', homeQuery);
 
   const {
     Hero: hero,
-    services,
+
     featuredProject,
-    posts,
+
     seo,
   } = homePage.data.attributes;
 
@@ -42,6 +25,7 @@ const Page: ({}: PageProps) => Promise<JSX.Element> = async () => {
         <div className='flex items-center justify-between w-full'>
           <Hero heroImage={heroImageUrl} hero={hero} />
         </div>
+        <Projects />
       </div>
     </main>
   );

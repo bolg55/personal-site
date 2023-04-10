@@ -1,7 +1,8 @@
+import AnimatedText from '@/components/AnimatedText';
 import Experience from '@/components/Experience';
-import Markdown from '@/components/Markdown';
 import { fetchAPI } from '@/lib/api';
 import { getStrapiMedia } from '@/lib/media';
+import Head from 'next/head';
 
 const About = async () => {
   const jobsData = await fetchAPI('/job', {
@@ -32,10 +33,13 @@ const About = async () => {
   const resumeURL = getStrapiMedia(resume);
 
   return (
-    <div>
-      <h1 className='my-64'>About</h1>
+    <>
+      <Head>
+        <title>Kellen Bolger | About Me</title>
+      </Head>
+      <AnimatedText text='About Me' className='text-center text-8xl' />
       <Experience jobs={jobs} resume={resumeURL} />
-    </div>
+    </>
   );
 };
 export default About;

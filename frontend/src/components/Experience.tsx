@@ -31,9 +31,14 @@ const Experience = ({ jobs, resume }: Job) => {
 
   return (
     <div className='my-64'>
-      <h2 className='font-bold text-8xl mb-32 w-full text-center text-dark dark:text-light'>
+      <motion.h2
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, type: 'spring' }}
+        className='font-bold text-6xl mb-32 w-full text-center text-dark dark:text-light'
+      >
         Experience
-      </h2>
+      </motion.h2>
       <div ref={ref} className='relative w-3/4 mx-auto'>
         <motion.div
           style={{ scaleY: scrollYProgress }}

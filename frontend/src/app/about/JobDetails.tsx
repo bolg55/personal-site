@@ -1,6 +1,6 @@
 import LiIcon from '@/components/LiIcon';
 import Markdown from '@/components/Markdown';
-import { Media, getStrapiMedia } from '@/lib/media';
+import { Media } from '@/lib/media';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
