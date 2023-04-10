@@ -17,28 +17,38 @@
       "required": true,
       "unique": true
     },
-    "description": {
-      "type": "richtext",
-      "required": true
-    },
     "slug": {
       "type": "uid",
       "targetField": "title",
       "required": true
     },
-    "images": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "videos"
-      ]
+    "summary": {
+      "type": "text"
     },
-    "tags": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::tag.tag"
+    "img": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "github": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string"
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

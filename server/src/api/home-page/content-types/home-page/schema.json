@@ -24,18 +24,6 @@
       "repeatable": false,
       "component": "layout.hero"
     },
-    "servicesPreview": {
-      "displayName": "servicesPreview",
-      "type": "component",
-      "repeatable": false,
-      "component": "layout.services-preview"
-    },
-    "featuredProject": {
-      "displayName": "featuredProject",
-      "type": "component",
-      "repeatable": false,
-      "component": "layout.featured-project"
-    },
     "postsSelection": {
       "displayName": "postsSelection",
       "type": "component",

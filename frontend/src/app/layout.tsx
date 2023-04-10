@@ -1,7 +1,6 @@
 import './globals.css';
 import { Montserrat } from 'next/font/google';
 import { fetchAPI } from '@/lib/api';
-import { getStrapiMedia } from '@/lib/media';
 import { footerQuery, headerQuery } from '@/queries/populate';
 import Header from './Header';
 import Footer from './Footer';
@@ -36,13 +35,14 @@ export default async function RootLayout({
     Logo: logo,
     socialLinks: headerSocialLinks,
   } = headerData.data.attributes;
-  const logoUrl = getStrapiMedia(logo.image);
 
   const {
     brandEmail,
     brandName,
     socialLinks: footerSocialLinks,
   } = footerData.data.attributes;
+
+  const { url: logoUrl } = logo.image.data.attributes;
 
   return (
     <html lang='en' className={`${montserrat.variable}  w-full min-h-screen`}>
