@@ -14,7 +14,7 @@ const Project = ({ title, type, img, link, github }: ProjectProps) => {
   return (
     <div className='col-span-6'>
       <article className='relative flex flex-col items-center justify-center w-full p-6 border shadow-2xl rounded-2xl border-dark dark:border-light bg-light dark:bg-dark rounded-br-2xl'>
-        <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl' />
+        <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl' />
         <Link
           href={link}
           target='_blank'

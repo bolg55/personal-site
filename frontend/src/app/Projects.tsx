@@ -15,7 +15,7 @@ const Projects = () => {
         My Projects
       </motion.h2>
 
-      <div className='grid grid-cols-12 gap-24'>
+      <div className='grid grid-cols-12 gap-24 gap-y-32'>
         <FeaturedProject
           title='Action Backers'
           summary="Action Backers is an innovative sports betting analytics platform that can help you increase your winnings and make more informed decisions. Our cutting-edge data and analytics tools provide valuable insights that can give you an edge in the competitive world of sports betting. I'm proud to say that Action Backers is a platform that I personally built from the ground up, with a commitment to excellence and a passion for sports betting."
@@ -49,7 +49,7 @@ const Projects = () => {
         />
         <Project
           title='NHL Machine Learning Model'
-          img='https://res.cloudinary.com/djr4sjcgh/image/upload/v1681106803/NHL_Model_ojmmmx.png'
+          img='https://res.cloudinary.com/djr4sjcgh/image/upload/v1681108766/NHL_Model_ojmmmx.png'
           link='https://github.com/bolg55/NHL_model_2021'
           github='https://github.com/bolg55/NHL_model_2021'
           type='Personal Project'
