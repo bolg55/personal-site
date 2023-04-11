@@ -4,7 +4,8 @@
   "info": {
     "singularName": "post",
     "pluralName": "posts",
-    "displayName": "Post"
+    "displayName": "Post",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -26,12 +27,13 @@
       "required": true
     },
     "cover": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "authors": {
       "type": "relation",
@@ -47,6 +49,10 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.seo-information"
+    },
+    "excerpt": {
+      "type": "text",
+      "maxLength": 250
     }
   }
 }

@@ -13,6 +13,7 @@ module.exports = [
             "blob:",
             "dl.airtable.com",
             "res.cloudinary.com",
+            "media.giphy.com",
           ],
           "media-src": [
             "'self'",
