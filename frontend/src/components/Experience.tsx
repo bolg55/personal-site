@@ -35,23 +35,23 @@ const Experience = ({ jobs, resume }: Job) => {
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, type: 'spring' }}
-        className='font-bold text-6xl mb-32 w-full text-center text-dark dark:text-light'
+        className='w-full mb-32 text-6xl font-bold text-center text-dark dark:text-light'
       >
         Experience
       </motion.h2>
-      <div ref={ref} className='relative w-3/4 mx-auto'>
+      <div ref={ref} className='relative mx-auto'>
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className='absolute left-9 top-0 w-1 h-full bg-dark dark:bg-light origin-top'
+          className='absolute top-0 w-1 h-full origin-top left-9 bg-dark dark:bg-light'
         />
 
-        <ul className='w-full flex flex-col items-start justify-between ml-4'>
+        <ul className='flex flex-col items-start justify-between w-full ml-4'>
           {jobs.map((job) => (
             <Details key={`${job.id}-${job.company}`} job={job} />
           ))}
         </ul>
       </div>
-      <div className='my-16 mx-auto items-center align-middle justify-center flex w-3/5 space-x-6'>
+      <div className='flex items-center justify-center w-3/5 mx-auto my-16 space-x-6 align-middle'>
         <Button>
           <a
             href={resume}

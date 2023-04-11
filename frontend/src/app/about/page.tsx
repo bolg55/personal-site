@@ -4,7 +4,6 @@ import Experience from '@/components/Experience';
 import { fetchAPI } from '@/lib/api';
 import { getStrapiMedia } from '@/lib/media';
 import { aboutQuery, jobsQuery } from '@/queries/populate';
-import Head from 'next/head';
 
 const About = async () => {
   const [aboutData, jobsData] = await Promise.all([
@@ -19,12 +18,17 @@ const About = async () => {
 
   return (
     <>
-      <Head>
-        <title>Kellen Bolger | About Me</title>
-      </Head>
-      <AnimatedText text='About Me' className='mb-16 text-center text-8xl' />
-      <AboutMe about={about} />
-      <Experience jobs={jobs} resume={resumeURL} />
+      <main className='flex w-full min-h-screen '>
+        <div className='z-0 inline-block w-full h-full p-32 pt-0'>
+          <AnimatedText
+            text='About Me'
+            className='mt-8 mb-16 text-center text-8xl'
+          />
+          <AboutMe about={about} />
+
+          <Experience jobs={jobs} resume={resumeURL} />
+        </div>
+      </main>
     </>
   );
 };

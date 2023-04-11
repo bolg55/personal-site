@@ -31,7 +31,7 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
   const { menuItems } = menu.data.attributes;
 
   return (
-    <header className='w-full px-32 py-8 font-medium flex items-center justify-between'>
+    <header className='flex items-center justify-between w-full px-32 py-8 font-medium'>
       <MenuItems menuItems={menuItems} className='flex space-x-4 capitalize' />
 
       {showLogo && (
@@ -42,7 +42,7 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
       <div className='flex space-x-10'>
         <SocialMenu
           socialLinks={socialLinks}
-          className='h-6 w-6 text-dark dark:text-light'
+          className='w-6 h-6 text-dark dark:text-light'
         />
         <ThemeSwitcher />
       </div>

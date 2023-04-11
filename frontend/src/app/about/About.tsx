@@ -1,5 +1,6 @@
 import Markdown from '@/components/Markdown';
 import Image from 'next/image';
+import FeaturedProject from '../FeaturedProject';
 
 interface AboutMeProps {
   about: {
@@ -21,25 +22,23 @@ const AboutMe = ({ about }: AboutMeProps) => {
   const { url, alternativeText } = image.data.attributes;
 
   return (
-    <main className='flex flex-col items-center justify-center w-full mx-32'>
-      <div className='grid w-full grid-cols-8 gap-16'>
-        <div className='flex flex-col items-start justify-start col-span-3'>
-          <h2 className='mb-4 text-lg font-bold uppercase text-dark/75'>
-            {heading}
-          </h2>
-          <Markdown markdown={description} />
-        </div>
-        <div>
-          <Image
-            src={url}
-            alt={alternativeText}
-            width={1000}
-            height={1000}
-            className='w-full h-auto rounded-2xl'
-          />
-        </div>
+    <div className='grid grid-cols-8 gap-16 my-16'>
+      <div className='col-span-4'>
+        <h2 className='text-lg font-bold uppercase'>{heading}</h2>
+        <Markdown markdown={description} />
       </div>
-    </main>
+
+      <div className='relative col-span-4 p-8 border h-max rounded-2xl border-dark bg-light dark:border-light dark:bg-dark'>
+        <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light' />
+        <Image
+          src={url}
+          alt={alternativeText}
+          width={1000}
+          height={1000}
+          className='w-full h-auto rounded-2xl bg-gradient-to-r from-gray-700 via-gray-900 to-black'
+        />
+      </div>
+    </div>
   );
 };
 export default AboutMe;

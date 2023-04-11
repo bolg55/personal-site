@@ -2,6 +2,7 @@ import { fetchAPI } from '@/lib/api';
 import { homeQuery, projectsQuery } from '@/queries/populate';
 import Hero from './Hero';
 import Projects from './Projects';
+import Image from 'next/image';
 
 interface PageProps {}
 
@@ -55,6 +56,7 @@ const Page: ({}: PageProps) => Promise<JSX.Element> = async () => {
     <main className='flex w-full min-h-screen '>
       <div className='z-0 inline-block w-full h-full p-16 pt-0'>
         <div className='flex items-center justify-between w-full'>
+          <pre>{JSON.stringify(homePage, null, 2)}</pre>
           <Hero heroImage={heroImageUrl} hero={hero} />
         </div>
         <Projects projects={projects} />

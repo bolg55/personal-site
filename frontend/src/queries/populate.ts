@@ -41,7 +41,7 @@ export const footerQuery = {
 
 // Retrieve the home page data
 export const homeQuery = {
-  next: { revalidate: 10 },
+  cache: 'no-store',
   populate: {
     Hero: {
       populate: {
@@ -53,10 +53,14 @@ export const homeQuery = {
         },
       },
     },
-    featuredProject: {
+    postsSelection: {
       populate: {
-        project: {
-          populate: '*',
+        featuredPosts: {
+          populate: {
+            posts: {
+              populate: '*',
+            },
+          },
         },
       },
     },
@@ -104,7 +108,7 @@ export const jobsQuery = {
 
 // Retrieve about me data
 export const aboutQuery = {
-  next: { revalidate: 10 },
+  cache: 'no-store',
   populate: {
     image: {
       fields: ['formats.large', 'url', 'alternativeText'],
