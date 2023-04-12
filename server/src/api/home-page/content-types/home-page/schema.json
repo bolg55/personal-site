@@ -41,6 +41,11 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.seo-information"
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project"
     }
   }
 }
