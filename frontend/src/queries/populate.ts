@@ -39,47 +39,6 @@ export const footerQuery = {
   },
 };
 
-// Retrieve the home page data
-export const homeQuery = {
-  cache: 'no-store',
-  populate: {
-    Hero: {
-      populate: {
-        image: {
-          fields: ['formats.large', 'url', 'alternativeText'],
-        },
-        buttons: {
-          populate: '*',
-        },
-      },
-    },
-    postsSelection: {
-      populate: {
-        featuredPosts: {
-          populate: {
-            posts: {
-              populate: '*',
-            },
-          },
-        },
-      },
-    },
-    seo: {
-      populate: '*',
-    },
-  },
-};
-
-// Retrieve Projects data
-export const projectsQuery = {
-  next: { revalidate: 10 },
-  populate: {
-    img: {
-      fields: ['formats.small', 'url'],
-    },
-  },
-};
-
 // Retreive Jobs data
 
 export const jobsQuery = {

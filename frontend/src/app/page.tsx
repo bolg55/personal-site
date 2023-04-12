@@ -1,8 +1,7 @@
 import { fetchAPI } from '@/lib/api';
-import { homeQuery, projectsQuery } from '@/queries/populate';
 import Hero from './Hero';
 import Projects from './Projects';
-import Image from 'next/image';
+import FeaturedPosts from './FeaturedPosts';
 
 interface PageProps {}
 
@@ -26,15 +25,39 @@ interface Project {
   };
 }
 
+export interface Post {
+  attributes: {
+    id: number;
+    title: string;
+    slug: string;
+    excerpt: string;
+    publishedAt: string;
+    cover: {
+      data: {
+        attributes: {
+          url: string;
+        };
+      };
+    };
+    tags: {
+      data: {
+        attributes: {
+          name: string;
+        };
+      }[];
+    };
+  };
+}
+
 const Page: ({}: PageProps) => Promise<JSX.Element> = async () => {
-  const [homePage, projectsData] = await Promise.all([
-    fetchAPI('/home-page', homeQuery),
-    fetchAPI('/projects', projectsQuery),
-  ]);
+  const homePage = await fetchAPI('/home-page', { cache: 'no-store' });
 
-  const { Hero: hero, seo } = homePage.data.attributes;
-
-  const heroImageUrl = hero.image.data.attributes.url;
+  const {
+    Hero: hero,
+    projects: projectsData,
+    postsSelection,
+    seo,
+  } = homePage.data.attributes;
 
   const projects = projectsData.data.map((project: Project) => {
     const { id, isFeatured, slug, title, summary, type, link, github, img } =
@@ -52,13 +75,30 @@ const Page: ({}: PageProps) => Promise<JSX.Element> = async () => {
     };
   });
 
+  const recentPosts = {
+    title: postsSelection.heading,
+    posts: postsSelection.featuredPosts.data.map((post: Post) => {
+      const { id, title, slug, excerpt, publishedAt, cover, tags } =
+        post.attributes;
+      return {
+        id,
+        title,
+        slug,
+        excerpt,
+        publishedAt,
+        cover: cover.data.attributes.url,
+        tags: tags.data.map((tag: any) => tag.attributes.name),
+      };
+    }),
+  };
+
   return (
     <main className='flex w-full min-h-screen '>
       <div className='z-0 inline-block w-full h-full p-16 pt-0'>
         <div className='flex items-center justify-between w-full'>
-          <pre>{JSON.stringify(homePage, null, 2)}</pre>
-          <Hero heroImage={heroImageUrl} hero={hero} />
+          <Hero hero={hero} />
         </div>
+        <FeaturedPosts posts={recentPosts} />
         <Projects projects={projects} />
       </div>
     </main>

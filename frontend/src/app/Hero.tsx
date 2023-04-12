@@ -3,7 +3,6 @@ import Image from 'next/image';
 import HeroButton from './HeroButton';
 
 interface HeroProps {
-  heroImage: string;
   hero: {
     callToAction: string;
     subheading?: string;
@@ -11,6 +10,7 @@ interface HeroProps {
       data: {
         attributes: {
           alternativeText: string;
+          url: string;
         };
       };
     };
@@ -23,9 +23,9 @@ interface HeroProps {
   };
 }
 
-const Hero = ({ heroImage, hero }: HeroProps) => {
+const Hero = ({ hero }: HeroProps) => {
   const { callToAction, subheading, buttons } = hero;
-  const { alternativeText } = hero.image.data.attributes;
+  const { url: heroImage, alternativeText } = hero.image.data.attributes;
   return (
     <div className='flex my-32'>
       <div className='w-1/2'>
@@ -37,8 +37,8 @@ const Hero = ({ heroImage, hero }: HeroProps) => {
           priority
         />
       </div>
-      <div className='w-1/2 flex flex-col items-center self-center'>
-        <AnimatedText text={callToAction} className='text-left text-6xl' />
+      <div className='flex flex-col items-center self-center w-1/2'>
+        <AnimatedText text={callToAction} className='text-6xl text-left' />
         <p className='my-4 text-base font-medium text-dark dark:text-light'>
           {subheading}
         </p>
