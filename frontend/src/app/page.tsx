@@ -93,13 +93,14 @@ const Page: ({}: PageProps) => Promise<JSX.Element> = async () => {
   };
 
   return (
-    <main className='flex w-full min-h-screen '>
-      <div className='z-0 inline-block w-full h-full p-16 pt-0'>
-        <div className='flex items-center justify-between w-full'>
+    <main className='flex w-full'>
+      <div className='z-0 inline-block w-full h-full p-32'>
+        <div className='flex flex-col justify-between w-full '>
           <Hero hero={hero} />
         </div>
-        <FeaturedPosts posts={recentPosts} />
+
         <Projects projects={projects} />
+        <FeaturedPosts posts={recentPosts.posts} title={recentPosts.title} />
       </div>
     </main>
   );

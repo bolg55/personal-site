@@ -7,23 +7,20 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 interface Posts {
+  title?: string;
+
   posts: {
+    id: number;
     title: string;
-    posts: {
-      id: number;
-      title: string;
-      slug: string;
-      excerpt?: string;
-      publishedAt?: string;
-      cover: string;
-      tags: string[];
-    }[];
-  };
+    slug: string;
+    excerpt?: string;
+    publishedAt?: string;
+    cover: string;
+    tags: string[];
+  }[];
 }
 
-const Posts = ({ posts }: Posts) => {
-  const { title, posts: recentPosts } = posts;
-
+const Posts = ({ posts, title }: Posts) => {
   return (
     <main className='flex flex-col items-center justify-center w-full mb-16'>
       <motion.h2
@@ -35,16 +32,15 @@ const Posts = ({ posts }: Posts) => {
         {title}
       </motion.h2>
 
-      <div className='grid grid-cols-12 gap-24 gap-y-32'>
-        {recentPosts.map((post) => {
+      <div className='grid grid-cols-12 gap-12 gap-y-32'>
+        {posts.map((post) => {
           const { title, slug, cover, excerpt, tags } = post;
           return (
-            <div key={slug} className='col-span-6'>
+            <div key={slug} className='col-span-4'>
               <article className='relative flex flex-col items-center justify-center w-full p-6 border shadow-2xl rounded-2xl border-dark dark:border-light bg-light dark:bg-dark rounded-br-2xl'>
-                <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[102%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl' />
+                <div className='absolute top-0 -right-3 -z-10 w-[103%] h-[102%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl' />
                 <Link
                   href={`/blog/${slug}`}
-                  target='_blank'
                   rel='noopener noreferrer'
                   className='w-full overflow-hidden rounded-lg cursor-pointer'
                 >
@@ -59,7 +55,6 @@ const Posts = ({ posts }: Posts) => {
                 <div className='flex flex-col items-start justify-between w-full mt-2'>
                   <Link
                     href={`/blog/${slug}`}
-                    target='_blank'
                     rel='noopener noreferrer'
                     className='hover:underline underline-offset-2'
                   >

@@ -1,6 +1,5 @@
 import Markdown from '@/components/Markdown';
 import Image from 'next/image';
-import FeaturedProject from '../FeaturedProject';
 
 interface AboutMeProps {
   about: {
@@ -22,14 +21,14 @@ const AboutMe = ({ about }: AboutMeProps) => {
   const { url, alternativeText } = image.data.attributes;
 
   return (
-    <div className='grid grid-cols-8 gap-16 my-16'>
+    <div className='grid grid-cols-8 gap-16 px-16 my-16'>
       <div className='col-span-4'>
         <h2 className='text-lg font-bold uppercase'>{heading}</h2>
         <Markdown markdown={description} />
       </div>
 
       <div className='relative col-span-4 p-8 border h-max rounded-2xl border-dark bg-light dark:border-light dark:bg-dark'>
-        <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl' />
+        <div className='absolute top-0 -right-3 -z-10 w-[103%] h-[103%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl' />
         <Image
           src={url}
           alt={alternativeText}

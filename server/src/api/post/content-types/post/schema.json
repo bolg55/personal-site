@@ -52,7 +52,7 @@
     },
     "excerpt": {
       "type": "text",
-      "maxLength": 250
+      "maxLength": 150
     }
   }
 }

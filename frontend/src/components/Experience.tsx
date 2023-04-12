@@ -30,7 +30,7 @@ const Experience = ({ jobs, resume }: Job) => {
   });
 
   return (
-    <div className='my-64'>
+    <div className='px-16 my-64'>
       <motion.h2
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}

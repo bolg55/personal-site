@@ -45,7 +45,7 @@ export default async function RootLayout({
   const { url: logoUrl } = logo.image.data.attributes;
 
   return (
-    <html lang='en' className={`${montserrat.variable}  w-full min-h-screen`}>
+    <html lang='en' className={`${montserrat.variable} `}>
       <body>
         <Providers>
           <div className='bg-light dark:bg-dark'>
