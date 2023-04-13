@@ -3,7 +3,7 @@ import FeaturedPosts from '../FeaturedPosts';
 
 const BlogPage = async () => {
   const postsData = await fetchAPI('/posts', {
-    cache: 'no-store',
+    next: { revalidate: 60 * 60 * 24 },
     populate: {
       fields: ['title', 'slug', 'excerpt', 'publishedAt'],
       cover: {

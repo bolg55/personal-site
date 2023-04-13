@@ -50,7 +50,7 @@ export interface Post {
 }
 
 const Page: ({}: PageProps) => Promise<JSX.Element> = async () => {
-  const homePage = await fetchAPI('/home-page', { cache: 'no-store' });
+  const homePage = await fetchAPI('/home-page', { next: { revalidate: 3600 } });
 
   const {
     Hero: hero,

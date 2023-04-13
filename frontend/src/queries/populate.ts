@@ -2,7 +2,7 @@
 
 // Retrieve the header data
 export const headerQuery = {
-  next: { revalidate: 10 },
+  next: { revalidate: 60 * 60 * 24 },
   populate: {
     fields: ['showLogo'],
     Logo: {
@@ -31,7 +31,7 @@ export const headerQuery = {
 
 // Retrieve the footer data
 export const footerQuery = {
-  next: { revalidate: 10 },
+  next: { revalidate: 60 * 60 * 24 },
   populate: {
     fields: ['brandEmail, brandName'],
     socialLinks: {
@@ -43,7 +43,7 @@ export const footerQuery = {
 // Retreive Jobs data
 
 export const jobsQuery = {
-  next: { revalidate: 10 },
+  next: { revalidate: 60 * 60 * 24 },
   populate: {
     Jobs: {
       populate: {
@@ -68,7 +68,7 @@ export const jobsQuery = {
 
 // Retrieve about me data
 export const aboutQuery = {
-  next: { revalidate: 10 },
+  next: { revalidate: 3600 },
   populate: {
     image: {
       fields: ['formats.large', 'url', 'alternativeText'],
