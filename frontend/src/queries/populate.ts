@@ -2,7 +2,7 @@
 
 // Retrieve the header data
 export const headerQuery = {
-  cache: 'no-store',
+  next: { revalidate: 10 },
   populate: {
     fields: ['showLogo'],
     Logo: {
@@ -31,6 +31,7 @@ export const headerQuery = {
 
 // Retrieve the footer data
 export const footerQuery = {
+  next: { revalidate: 10 },
   populate: {
     fields: ['brandEmail, brandName'],
     socialLinks: {
@@ -67,7 +68,7 @@ export const jobsQuery = {
 
 // Retrieve about me data
 export const aboutQuery = {
-  cache: 'no-store',
+  next: { revalidate: 10 },
   populate: {
     image: {
       fields: ['formats.large', 'url', 'alternativeText'],
