@@ -21,13 +21,13 @@ const AboutMe = ({ about }: AboutMeProps) => {
   const { url, alternativeText } = image.data.attributes;
 
   return (
-    <div className='grid grid-cols-8 gap-16 px-16 my-16'>
-      <div className='col-span-4'>
+    <div className='grid w-full grid-cols-8 gap-16 sm:gap-8'>
+      <div className='col-span-4 md:col-span-8 md:order-2'>
         <h2 className='text-lg font-bold uppercase'>{heading}</h2>
         <Markdown markdown={description} />
       </div>
 
-      <div className='relative col-span-4 p-8 border h-max rounded-2xl border-dark bg-light dark:border-light dark:bg-dark'>
+      <div className='relative items-center justify-center col-span-4 p-8 border md:mx-8 md:mb-4 md:col-span-8 h-max rounded-2xl border-dark bg-light dark:border-light dark:bg-dark md:order-1'>
         <div className='absolute top-0 -right-3 -z-10 w-[103%] h-[103%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl' />
         <Image
           src={url}

@@ -30,22 +30,22 @@ const Experience = ({ jobs, resume }: Job) => {
   });
 
   return (
-    <div className='px-16 my-64'>
+    <div className='my-64'>
       <motion.h2
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, type: 'spring' }}
-        className='w-full mb-32 text-6xl font-bold text-center text-dark dark:text-light'
+        className='w-full mb-32 text-6xl font-bold text-center text-dark dark:text-light md:text-6xl xs:text-4xl md:mb-16'
       >
         Experience
       </motion.h2>
-      <div ref={ref} className='relative mx-auto'>
+      <div ref={ref} className='relative w-3/4 mx-auto lg:w-[90%] md:w-full'>
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className='absolute top-0 w-1 h-full origin-top left-9 bg-dark dark:bg-light'
+          className='absolute top-0 w-1 h-full origin-top left-9 bg-dark dark:bg-light md:w-0.5 md:left-[30px] xs:left-5'
         />
 
-        <ul className='flex flex-col items-start justify-between w-full ml-4'>
+        <ul className='flex flex-col items-start justify-between w-full ml-4 xs:ml-2'>
           {jobs.map((job) => (
             <Details key={`${job.id}-${job.company}`} job={job} />
           ))}

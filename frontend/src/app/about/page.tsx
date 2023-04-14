@@ -19,10 +19,10 @@ const About = async () => {
   return (
     <>
       <main className='flex w-full min-h-screen '>
-        <div className='z-0 inline-block w-full h-full p-32'>
+        <div className='z-0 inline-block w-full h-full p-32 xl:p-24 lg:p-16 md:p-12 sm:p-8'>
           <AnimatedText
             text='About Me'
-            className='mt-8 mb-16 text-center text-8xl'
+            className='mt-8 mb-16 text-center text-8xl lg:text-7xl sm:text-6xl xs:text-4xl sm:mb-8'
           />
           <AboutMe about={about} />
 

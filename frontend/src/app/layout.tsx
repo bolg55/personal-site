@@ -69,7 +69,7 @@ export default async function RootLayout({
       <meta name='theme-color' content='#333333' />
       <body>
         <Providers>
-          <div className='bg-light dark:bg-dark'>
+          <div className='bg-light dark:bg-dark '>
             <Suspense fallback={<SkeletonLoader />}>
               <Header
                 logoUrl={logoUrl}
@@ -79,6 +79,7 @@ export default async function RootLayout({
                 menu={menu}
               />
             </Suspense>
+
             {children}
 
             <Footer

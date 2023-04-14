@@ -27,9 +27,9 @@ const Hero = ({ hero }: HeroProps) => {
   const { callToAction, subheading, buttons } = hero;
   const { url: heroImage, alternativeText } = hero.image.data.attributes;
   return (
-    <div className='flex flex-col min-h-screen'>
-      <div className='flex'>
-        <div className='w-1/2'>
+    <div className='flex flex-col min-h-screen pt-0 lg:min-h-fit lg:mb-32 md:pt-16 sm:pt-8'>
+      <div className='flex items-center justify-between w-full lg:flex-col'>
+        <div className='w-1/2 md:w-full'>
           <Image
             src={heroImage}
             alt={alternativeText}
@@ -37,15 +37,18 @@ const Hero = ({ hero }: HeroProps) => {
             height={500}
             priority
             sizes='(max-width: 768px) 100vw,(max-width:1200px) 50vw, 50vw'
-            className='w-full h-auto'
+            className='w-full h-auto lg:hidden md:inline-block md:w-full'
           />
         </div>
-        <div className='flex flex-col items-center self-center w-1/2'>
-          <AnimatedText text={callToAction} className='text-6xl text-left' />
-          <p className='my-4 text-base font-medium text-dark dark:text-light'>
+        <div className='flex flex-col items-center self-center w-1/2 lg:w-full lg:text-center'>
+          <AnimatedText
+            text={callToAction}
+            className='text-6xl text-left xl:text-5xl lg:text-center lg:text-6xl md:text-5xl sm:text-3xl'
+          />
+          <p className='my-4 text-base font-medium text-dark dark:text-light md:text-sm sm:text-xs'>
             {subheading}
           </p>
-          <div className='flex items-center self-start mt-2 space-x-2'>
+          <div className='flex items-center self-start mt-2 space-x-2 lg:self-center'>
             {buttons.map((link) => (
               <HeroButton
                 key={link.id}

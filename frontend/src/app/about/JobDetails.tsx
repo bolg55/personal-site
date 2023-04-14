@@ -24,7 +24,7 @@ const Details = ({ job }: Job) => {
   return (
     <li
       ref={ref}
-      className='my-8 first:mt-0 last:mb-0 mx-auto w-3/5 flex flex-col items-start justify-between'
+      className='flex flex-col items-start justify-between w-3/5 mx-auto my-8 first:mt-0 last:mb-0 md:w-4/5'
     >
       <LiIcon reference={ref} />
       <motion.div
@@ -32,13 +32,13 @@ const Details = ({ job }: Job) => {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, type: 'spring' }}
       >
-        <h3 className=' font-bold text-2xl'>
+        <h3 className='text-2xl font-bold sm:text-xl xs:text-lg'>
           {title}&nbsp;
           <span className='text-primary dark:text-primaryDark'>
             @ {company}
           </span>
         </h3>
-        <span className='capitalize font-medium text-dark/75 dark:text-light/50'>
+        <span className='font-medium capitalize text-dark/75 dark:text-light/50 xs:text-sm'>
           {fromDate}-{toDate} | {location}
         </span>
         <Markdown markdown={overview!} />

@@ -21,7 +21,7 @@ const HeroButton = ({ links, isPrimary }: HeroButtonProps) => {
       <Link
         key={id}
         href={url}
-        className={`${buttonClass} capitalize p-2.5 px-6 rounded-lg text-lg font-semibold transition-all duration-300 ease-in-out`}
+        className={`${buttonClass} md:p-2 md:px-4 md:text-base capitalize p-2.5 px-6 rounded-lg text-lg font-semibold transition-all duration-300 ease-in-out`}
       >
         {label}
       </Link>

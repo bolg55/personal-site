@@ -94,11 +94,10 @@ const Page: ({}: PageProps) => Promise<JSX.Element> = async () => {
 
   return (
     <main className='flex w-full'>
-      <div className='z-0 inline-block w-full h-full p-32 xl:p-16 lg:p-12'>
-        <div className='flex flex-col justify-between w-full '>
+      <div className='z-0 inline-block w-full h-full p-32 xl:p-24 lg:p-16 md:p-12 sm:p-8 '>
+        <div className='flex flex-col justify-between w-full'>
           <Hero hero={hero} />
         </div>
-
         <Projects projects={projects} />
         <FeaturedPosts posts={recentPosts.posts} title={recentPosts.title} />
       </div>

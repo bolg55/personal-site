@@ -37,7 +37,7 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className='flex items-center justify-between w-full px-32 py-8 font-medium lg:px-16 md:px-8'>
+    <header className='z-10 flex items-center justify-between w-full px-32 py-8 font-medium lg:px-16 md:px-12 sm:px-8'>
       <button
         onClick={() => setMobileMenuOpen(true)}
         className='hidden lg:flex'
@@ -73,7 +73,7 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
                 <MobileMenuItems
                   toggleMenu={() => setMobileMenuOpen(false)}
                   menuItems={menuItems}
-                  className='flex-col hidden space-y-4 text-2xl text-light lg:flex dark:text-darl'
+                  className='flex-col hidden mb-4 space-y-6 text-2xl text-light lg:flex dark:text-dark'
                 />
               </div>
             </div>
