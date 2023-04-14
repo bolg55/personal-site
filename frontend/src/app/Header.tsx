@@ -37,7 +37,7 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className='z-10 flex items-center justify-between w-full px-32 py-8 font-medium lg:px-16 md:px-12 sm:px-8'>
+    <header className='z-10 flex items-center justify-between w-full px-32 py-8 font-medium lg:px-16 md:px-12 xs:px-8'>
       <button
         onClick={() => setMobileMenuOpen(true)}
         className='hidden lg:flex'
@@ -52,7 +52,7 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
         onClose={setMobileMenuOpen}
       >
         <div className='fixed inset-0 z-50' />
-        <Dialog.Panel className='fixed inset-y-0 right-0 z-50 w-full px-6 py-6 overflow-y-auto bg-dark/90 dark:bg-light/75 backdrop-blur-md sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
+        <Dialog.Panel className='fixed inset-y-0 right-0 z-50 w-full px-6 py-6 overflow-y-auto bg-dark/90 dark:bg-light/75 backdrop-blur-md sm:ring-1 sm:ring-gray-900/10'>
           <div className='flex justify-between'>
             <Logo src={logoUrl} alt={alt} />
             <button
