@@ -19,17 +19,17 @@ interface ProjectsProps {
 
 const Projects = ({ projects }: ProjectsProps) => {
   return (
-    <main className='flex flex-col items-center justify-center w-full mb-16'>
+    <main className='flex flex-col items-center justify-center w-full mb-16 lg:bg-red-400'>
       <motion.h2
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, type: 'spring' }}
-        className='w-full mb-16 font-bold text-center text-8xl text-dark dark:text-light'
+        className='w-full mb-16 font-bold text-center text-8xl lg:text-6xl md:text-4xl text-dark dark:text-light'
       >
         My Projects
       </motion.h2>
 
-      <div className='grid grid-cols-12 gap-24 gap-y-32'>
+      <div className='grid grid-cols-12 gap-24 gap-y-32 lg:gap-12 lg:gap-y-16 xl:gap-16 xl:gap-y-24'>
         {projects.map((project) => {
           if (project.isFeatured) {
             return (

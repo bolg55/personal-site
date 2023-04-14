@@ -2,7 +2,7 @@
 
 import { IconName } from '@/components/Icon';
 import Logo from '@/components/Logo';
-import MenuItems from '@/components/MenuItems';
+import MenuItems, { MobileMenuItems } from '@/components/MenuItems';
 import SocialMenu from '@/components/SocialMenu';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
 import { Dialog } from '@headlessui/react';
@@ -37,7 +37,7 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className='flex items-center justify-between w-full px-32 py-8 font-medium'>
+    <header className='flex items-center justify-between w-full px-32 py-8 font-medium lg:px-16 md:px-8'>
       <button
         onClick={() => setMobileMenuOpen(true)}
         className='hidden lg:flex'
@@ -52,8 +52,8 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
         onClose={setMobileMenuOpen}
       >
         <div className='fixed inset-0 z-50' />
-        <Dialog.Panel className='fixed inset-y-0 right-0 z-50 w-full px-6 py-6 overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
-          <div className='flex items-center justify-between'>
+        <Dialog.Panel className='fixed inset-y-0 right-0 z-50 w-full px-6 py-6 overflow-y-auto bg-dark/90 dark:bg-light/75 backdrop-blur-md sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
+          <div className='flex justify-between'>
             <Logo src={logoUrl} alt={alt} />
             <button
               type='button'
@@ -61,25 +61,29 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className='sr-only'>Close menu</span>
-              <HiXMark className='w-6 h-6' aria-hidden='true' />
+              <HiXMark
+                className='w-6 h-6 text-light dark:text-dark'
+                aria-hidden='true'
+              />
             </button>
           </div>
-          <div className='flow-root mt-6'>
+          <div className='flex items-center justify-center mt-6'>
             <div className='-my-6 divide-y divide-gray-500/10'>
               <div className='py-6 space-y-2'>
-                <MenuItems
+                <MobileMenuItems
+                  toggleMenu={() => setMobileMenuOpen(false)}
                   menuItems={menuItems}
-                  className='flex-col hidden capitalize lg:flex'
+                  className='flex-col hidden space-y-4 text-2xl text-light lg:flex dark:text-darl'
                 />
-              </div>
-              <div className='flex items-start justify-start space-x-4'>
-                <SocialMenu
-                  socialLinks={socialLinks}
-                  className='w-6 h-6 text-dark dark:text-light'
-                />
-                <ThemeSwitcher />
               </div>
             </div>
+          </div>
+          <div className='flex items-center justify-center mt-6 space-x-4'>
+            <SocialMenu
+              socialLinks={socialLinks}
+              className='w-6 h-6 text-dark dark:text-light'
+            />
+            <ThemeSwitcher />
           </div>
         </Dialog.Panel>
       </Dialog>
@@ -94,7 +98,7 @@ const Header = ({ logoUrl, alt, showLogo, menu, socialLinks }: HeaderProps) => {
           <Logo src={logoUrl} alt={alt} />
         </div>
       )}
-      <div className='flex space-x-10'>
+      <div className='flex space-x-10 xs:hidden'>
         <SocialMenu
           socialLinks={socialLinks}
           className='w-6 h-6 text-dark dark:text-light'
