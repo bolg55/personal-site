@@ -57,10 +57,10 @@ const Experience = ({ jobs, resume }: Job) => {
             href={resume}
             download={true}
             target='_blank'
-            className='flex items-center space-x-1'
+            className='flex items-center space-x-3'
           >
             <span>Download Resume</span>
-            <span className='text-2xl '>
+            <span className='text-2xl md:hidden'>
               <HiOutlineCloudArrowDown />
             </span>
           </a>
