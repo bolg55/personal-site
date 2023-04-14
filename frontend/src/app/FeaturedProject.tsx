@@ -35,6 +35,8 @@ const FeaturedProject = ({
             width={1000}
             height={1000}
             className='w-full h-auto'
+            priority
+            sizes='(max-width: 768px) 100vw,(max-width:1200px) 50vw, 50vw'
           />
         </Link>
         <div className='flex flex-col items-start justify-between w-1/2 pl-6'>

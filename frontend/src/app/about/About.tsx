@@ -32,8 +32,10 @@ const AboutMe = ({ about }: AboutMeProps) => {
         <Image
           src={url}
           alt={alternativeText}
-          width={1000}
-          height={1000}
+          width={500}
+          height={500}
+          priority
+          sizes='(max-width: 768px) 100vw,(max-width:1200px) 50vw, 50vw'
           className='w-full h-auto rounded-2xl bg-gradient-to-r from-gray-700 via-gray-900 to-black'
         />
       </div>

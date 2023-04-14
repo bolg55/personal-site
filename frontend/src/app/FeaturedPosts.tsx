@@ -49,6 +49,8 @@ const Posts = ({ posts, title }: Posts) => {
                     alt={title}
                     width={1000}
                     height={1000}
+                    priority
+                    sizes='(max-width: 768px) 100vw,(max-width:1200px) 50vw, 50vw'
                     className='w-full h-auto'
                   />
                 </Link>

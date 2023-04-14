@@ -22,7 +22,7 @@ const MenuItems = ({ menuItems, className }: MenuItemsProps) => {
           <Link href={item.url} className='relative group'>
             {item.label}
             <span
-              className={`h-[1px] inline-block  left-0 -bottom-0.5 bg-dark dark:bg-light absolute
+              className={`h-[1px] lg:hidden inline-block  left-0 -bottom-0.5 bg-dark dark:bg-light absolute
               group-hover:w-full transition-[width] duration-300 ease
               ${path === item.url ? 'w-full' : 'w-0'}
               `}
