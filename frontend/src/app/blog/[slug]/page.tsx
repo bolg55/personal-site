@@ -13,9 +13,63 @@ interface Post {
     title: string;
     slug: string;
     content: string;
+    excerpt: string;
+    cover: string;
     updatedAt: string;
   };
 }
+
+export const generateMetadata = async ({ params: { slug } }: PostPageProps) => {
+  const postData = await fetchAPI(`/posts`, {
+    populate: {
+      cover: {
+        fields: ['url'],
+      },
+    },
+    filters: {
+      slug: {
+        $eq: slug,
+      },
+    },
+  });
+
+  const post = postData.data.map((post: Post) => {
+    const { title, slug, excerpt, updatedAt, cover } = post.attributes;
+    return {
+      title,
+      slug,
+      excerpt,
+      updatedAt,
+      cover,
+    };
+  });
+
+  if (!post.length) {
+    return {
+      title: 'Not Found',
+      description: 'The page you are looking for does not exist.',
+    };
+  }
+
+  return {
+    title: post[0].title,
+    description: post[0].excerpt,
+    openGraph: {
+      type: 'article',
+      article: {
+        publishedTime: post[0].updatedAt,
+      },
+      images: [
+        {
+          url: post[0].cover.data.attributes.url,
+          width: 1200,
+          height: 630,
+          alt: post[0].title,
+        },
+      ],
+    },
+  };
+};
 
 export const generateStaticParams = async () => {
   const slugs = await fetchAPI('/posts', { next: { revalidate: 3600 } });
@@ -30,6 +84,11 @@ const PostPage = async ({ params }: PostPageProps) => {
   const slug = params.slug;
 
   const postData = await fetchAPI(`/posts`, {
+    populate: {
+      cover: {
+        fields: ['url', 'alternativeText'],
+      },
+    },
     filters: {
       slug: {
         $eq: slug,
@@ -38,12 +97,13 @@ const PostPage = async ({ params }: PostPageProps) => {
   });
 
   const post = postData.data.map((post: Post) => {
-    const { title, slug, content, updatedAt } = post.attributes;
+    const { title, slug, content, updatedAt, cover } = post.attributes;
     return {
       title,
       slug,
       content,
       updatedAt,
+      cover,
     };
   });
 

@@ -1,6 +1,12 @@
 import { fetchAPI } from '@/lib/api';
 import FeaturedPosts from '../FeaturedPosts';
 
+export const metadata = {
+  title: 'Blog',
+  description:
+    'Stay updated with web development trends, tutorials, and insights from a full-stack developer working with JavaScript, TypeScript, Node, Next.js, React, and Solid.',
+};
+
 const BlogPage = async () => {
   const postsData = await fetchAPI('/posts', {
     next: { revalidate: 60 * 60 * 24 },

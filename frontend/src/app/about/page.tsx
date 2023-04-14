@@ -5,6 +5,12 @@ import { fetchAPI } from '@/lib/api';
 import { getStrapiMedia } from '@/lib/media';
 import { aboutQuery, jobsQuery } from '@/queries/populate';
 
+export const metadata = {
+  title: 'About Me',
+  description:
+    'Learn about my journey as a full-stack web developer with expertise in JavaScript, TypeScript, Node, Next.js, React, and Solid. Explore my experience and skills.',
+};
+
 const About = async () => {
   const [aboutData, jobsData] = await Promise.all([
     fetchAPI('/about', aboutQuery),
