@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 interface MenuItemsProps {
   menuItems: {
@@ -10,6 +10,7 @@ interface MenuItemsProps {
     label: string;
   }[];
   className?: string;
+  toggleMenu?: () => void;
 }
 
 const MenuItems = ({ menuItems, className }: MenuItemsProps) => {
@@ -22,7 +23,7 @@ const MenuItems = ({ menuItems, className }: MenuItemsProps) => {
           <Link href={item.url} className='relative group'>
             {item.label}
             <span
-              className={`h-[1px] lg:hidden inline-block  left-0 -bottom-0.5 bg-dark dark:bg-light absolute
+              className={`h-[1px]  inline-block  left-0 -bottom-0.5 bg-dark dark:bg-light absolute
               group-hover:w-full transition-[width] duration-300 ease
               ${path === item.url ? 'w-full' : 'w-0'}
               `}
@@ -37,3 +38,31 @@ const MenuItems = ({ menuItems, className }: MenuItemsProps) => {
 };
 
 export default MenuItems;
+
+export const MobileMenuItems = ({
+  menuItems,
+  className,
+  toggleMenu,
+}: MenuItemsProps) => {
+  const router = useRouter();
+
+  const handleRouteChange = (url: string) => {
+    toggleMenu && toggleMenu();
+    router.push(url);
+  };
+
+  return (
+    <ul className={className}>
+      {menuItems.map((item) => (
+        <li key={item.id}>
+          <button
+            onClick={() => handleRouteChange(item.url)}
+            className='relative capitalize group'
+          >
+            {item.label}
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+};

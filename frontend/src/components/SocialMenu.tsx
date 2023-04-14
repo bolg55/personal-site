@@ -14,13 +14,13 @@ interface SocialMenuProps {
 }
 
 const SocialMenu = ({ socialLinks, className }: SocialMenuProps) => (
-  <ul className='flex space-x-3 items-center align-middle justify-center'>
+  <ul className='flex items-center justify-center space-x-3 align-middle xs:space-x-1'>
     {socialLinks.map((item) => (
       <motion.li
         key={item.id}
         whileHover={{ y: -2 }}
         whileTap={{ scale: 0.9 }}
-        className='shadow p-1 dark:bg-dark bg-light rounded-full shadow-primary dark:shadow-primaryDark'
+        className='p-1 rounded-full shadow dark:bg-dark bg-light shadow-primary dark:shadow-primaryDark'
       >
         <a href={item.link} target={'_blank'}>
           <ReactIcon icon={item.iconName} className={className} />
