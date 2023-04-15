@@ -27,12 +27,12 @@ const Posts = ({ posts, title }: Posts) => {
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, type: 'spring' }}
-        className='w-full mb-16 font-bold text-center text-8xl text-dark dark:text-light'
+        className='w-full mb-16 font-bold text-center text-8xl sm:mb-8 sm:text-6xl lg:text-7xl xs:text-4xl text-dark dark:text-light'
       >
         {title}
       </motion.h2>
 
-      <div className='grid grid-cols-12 gap-12 gap-y-32'>
+      <div className='grid grid-cols-12 gap-12 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0'>
         {posts.map((post) => {
           const { title, slug, cover, excerpt, tags } = post;
           return (
