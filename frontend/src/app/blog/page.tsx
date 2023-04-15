@@ -58,7 +58,7 @@ const BlogPage = async () => {
 
   return (
     <main className='flex w-full min-h-screen'>
-      <div className='z-0 inline-block w-full h-full p-16 pt-0'>
+      <div className='z-0 inline-block w-full h-full p-16 xl:p-24 lg:p-16 md:p-12 sm:p-8'>
         <FeaturedPosts posts={posts} title='Blog' />
       </div>
     </main>

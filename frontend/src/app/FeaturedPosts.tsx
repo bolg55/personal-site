@@ -36,9 +36,9 @@ const Posts = ({ posts, title }: Posts) => {
         {posts.map((post) => {
           const { title, slug, cover, excerpt, tags } = post;
           return (
-            <div key={slug} className='col-span-4'>
-              <article className='relative flex flex-col items-center justify-center w-full p-6 border shadow-2xl rounded-2xl border-dark dark:border-light bg-light dark:bg-dark rounded-br-2xl'>
-                <div className='absolute top-0 -right-3 -z-10 w-[103%] h-[102%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl' />
+            <div key={slug} className='col-span-4 sm:col-span-12 md:col-span-6'>
+              <article className='relative flex flex-col items-center justify-center w-full p-4 border shadow-2xl rounded-2xl border-dark dark:border-light bg-light dark:bg-dark rounded-br-2xl xs:p-2'>
+                <div className='absolute top-0 -right-3 -z-10 w-[103%] h-[102%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]' />
                 <Link
                   href={`/blog/${slug}`}
                   rel='noopener noreferrer'
@@ -60,7 +60,7 @@ const Posts = ({ posts, title }: Posts) => {
                     rel='noopener noreferrer'
                     className='hover:underline underline-offset-2'
                   >
-                    <h2 className='w-full my-2 text-lg font-bold text-left'>
+                    <h2 className='w-full my-2 text-xl font-bold text-left lg:text-sm'>
                       {title}
                     </h2>
                   </Link>
@@ -75,7 +75,7 @@ const Posts = ({ posts, title }: Posts) => {
                     ))}
                   </span>
 
-                  <div className='flex w-full mt-2 text-justify'>
+                  <div className='my-2 font-medium text-dark dark:text-light lg:text-sm'>
                     <p>{excerpt}</p>
                   </div>
                 </div>
