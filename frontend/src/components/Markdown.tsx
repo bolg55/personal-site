@@ -13,7 +13,7 @@ const Markdown: FC<MarkdownProps> = ({ markdown }) => {
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeCodeTitles, rehypePrism]}
-      className='prose dark:prose-invert md:text-sm'
+      className='prose prose-xl sm:prose-base lg:prose-lg dark:prose-invert prose-a:text-indigo-600 prose-a:no-underline'
     >
       {markdown}
     </ReactMarkdown>

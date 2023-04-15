@@ -112,13 +112,13 @@ const PostPage = async ({ params }: PostPageProps) => {
   }
 
   return (
-    <main className='flex flex-col items-center justify-center w-full '>
-      <div className='z-0 inline-block w-1/2 h-auto p-16'>
-        <div className='relative p-8 bg-white border-t border-l shadow-2xl dark:border-slate-800/60 rounded-3xl dark:bg-black rounded-br-2xl'>
+    <main className='flex w-full '>
+      <div className='z-0 flex flex-col items-center justify-center w-full h-full p-32 xl:p-24 lg:p-16 md:p-12 sm:p-8'>
+        <div className='relative w-1/2 p-8 mb-16 text-center bg-white border-t border-l shadow-2xl md:p-4 md:w-full dark:border-slate-800/60 rounded-3xl dark:bg-black rounded-br-2xl'>
           <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[105%] rounded-[2rem] bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 rounded-br-3xl' />
           <div>
-            <h1 className='text-4xl font-bold '>{post[0]?.title}</h1>
-            <p className='pt-2'>
+            <h1 className='text-4xl font-bold sm:text-lg'>{post[0]?.title}</h1>
+            <p className='pt-2 sm:text-xs'>
               Updated:{' '}
               <time dateTime={post[0]?.updatedAt}>
                 {new Date(post[0]?.updatedAt).toLocaleDateString('en-US', {
@@ -130,10 +130,10 @@ const PostPage = async ({ params }: PostPageProps) => {
             </p>
           </div>
         </div>
+        <article>
+          <Markdown markdown={post[0]?.content} />
+        </article>
       </div>
-      <article>
-        <Markdown markdown={post[0]?.content} />
-      </article>
     </main>
   );
 };
