@@ -1,38 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Welcome to my site!
 
-## Getting Started
+This is a website to showcase my work and projects. I am a self-taught programmer, and I am currently working on a few projects.
 
-First, run the development server:
+In addition to my projects, this portfolio site also contains my blog. I am working on a re-build of my SaaS project, [**Action Backers**](https://actionbackers.com), and I will be documenting my progress on my blog.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+When I am not working on Action Backers, or for Strapi as a Solutions Engineer, I love building computers, Hackintosh-ing, Raspberry Pi-ing, and building cool projects with code. I'm always eager to learn more and open to new opportunities.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Want to get in touch?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+✉️ [**Email**](mailto:kellen@kellenbolger.ca)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Projects
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [**Action Backers**](https://actionbackers.com) - Action Backers is an innovative sports betting analytics platform that can help you increase your winnings and make more informed decisions. Our cutting-edge data and analytics tools provide valuable insights that can give you an edge in the competitive world of sports betting. I'm proud to say that Action Backers is a platform that I personally built from the ground up, with a commitment to excellence and a passion for sports betting.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [**SaaS Starter**](https://github.com/bolg55/SaaS-Starter) - A SaaS starter kit built with Next.js, Tailwind, Prisma,[Auth.js](https://authjs.dev/), Typescript and Stripe.It is a fully functional SaaS starter kit that you can use to build your own SaaS project. It is also a great way to learn more about the Jamstack.
 
-## Learn More
+- [**Notflix. A Netflix clone.**](https://notflix-omega.vercel.app/) - A Netflix clone built with React, Tailwind and the [TMDB API](https://developers.themoviedb.org/3/getting-started/introduction). This project was built as a way to better understand responsive design, and to learn more about React and Tailwind. You can view movie trailers, search by category etc.
 
-To learn more about Next.js, take a look at the following resources:
+- [**Spotify Clone**](https://spotify-clone-bolg55.vercel.app/) - A Spotify clone built with React, Tailwind and the [Spotify API](https://developer.spotify.com/documentation/web-api/). This Spotify clone uses the Spotify API to connect to your existing account. Fully functional, it plays songs, brings in playlists, and controls the Spotify desktop or phone app. Persists logged in state and authenticates user using Auth.js (Formerly NextAuth).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+For more, check out the site!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Site Built with
 
-## Deploy on Vercel
+- [**Next.js**](https://nextjs.org/) - Next.js is a React framework that makes it easy to build static and server-rendered applications. It is a great way to build a Jamstack application.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [**Tailwind CSS**](https://tailwindcss.com/) - Tailwind CSS is a utility-first CSS framework that makes it easy to build custom designs without ever leaving your HTML. It is a great way to build a Jamstack application.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [**Strapi**](https://strapi.io/) - Strapi is a headless CMS that makes it easy to build custom APIs. It is a great way to build a Jamstack application.
+
+### Deployed with
+
+- [**Vercel**](https://vercel.com/) - Vercel is a cloud platform for static sites and Serverless Functions. It is a great way to build a Jamstack application.
+
+- [**Digital Ocean**](https://www.digitalocean.com/) - Digital Ocean is a cloud platform that makes it easy to deploy and scale applications of any size, providing developers the simplest path to getting their projects to market.
