@@ -24,12 +24,12 @@ const Projects = ({ projects }: ProjectsProps) => {
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, type: 'spring' }}
-        className='w-full mb-16 font-bold text-center text-8xl xl:text-6xl md:text-4xl text-dark dark:text-light'
+        className='w-full mb-16 font-bold text-center sm:mb-8 text-8xl sm:text-6xl lg:text-7xl xs:text-4xl text-dark dark:text-light'
       >
         My Projects
       </motion.h2>
 
-      <div className='grid grid-cols-12 gap-24 gap-y-32 lg:gap-12 lg:gap-y-16 xl:gap-16 xl:gap-y-24'>
+      <div className='grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0'>
         {projects.map((project) => {
           if (project.isFeatured) {
             return (
