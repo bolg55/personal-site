@@ -10,14 +10,14 @@ export const sitemap = async () => {
   const allPosts = await fetchAPI('/posts');
 
   const posts = allPosts.data.map((post: PostProps) => ({
-    url: `http://localhost:3000/blog/${post.attributes.slug}`,
+    url: `https://www.kellenbolger.ca/blog/${post.attributes.slug}`,
     lastModified: post.attributes.updatedAt,
     changefreq: 'daily',
   }));
 
   const routes = ['', '/about', '/contact', '/blog', '/blog/*'].map(
     (route) => ({
-      url: `http://localhost:3000/${route}`,
+      url: `https://www.kellenbolger.ca/${route}`,
       lastModified: new Date().toISOString(),
     })
   );
