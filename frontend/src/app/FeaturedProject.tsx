@@ -56,7 +56,7 @@ const FeaturedProject = ({
           <p className='my-2 font-medium text-dark dark:text-light sm:text-sm'>
             {summary}
           </p>
-          <div className='flex items-center mt-2'>
+          <div className='flex items-center justify-center mt-2'>
             <Link href={github} target='_blank' rel='noopener noreferrer'>
               <FaGithub className='w-10 h-10' />
             </Link>

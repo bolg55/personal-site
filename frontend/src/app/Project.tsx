@@ -12,9 +12,9 @@ interface ProjectProps {
 
 const Project = ({ title, type, img, link, github }: ProjectProps) => {
   return (
-    <div className='col-span-6'>
-      <article className='relative flex flex-col items-center justify-center w-full p-6 border shadow-2xl rounded-2xl border-dark dark:border-light bg-light dark:bg-dark rounded-br-2xl'>
-        <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl' />
+    <div className='col-span-6 sm:col-span-12'>
+      <article className='relative flex flex-col items-center justify-center w-full p-6 border shadow-2xl rounded-2xl border-dark dark:border-light bg-light dark:bg-dark rounded-br-2xl xs:p-4'>
+        <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light rounded-br-3xl md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]' />
         <Link
           href={link}
           target='_blank'
@@ -30,7 +30,7 @@ const Project = ({ title, type, img, link, github }: ProjectProps) => {
           />
         </Link>
         <div className='flex flex-col items-start justify-between w-full mt-4'>
-          <span className='text-xl font-medium text-primary dark:text-primaryDark'>
+          <span className='text-xl font-medium text-primary dark:text-primaryDark lg:text-lg md:text-base'>
             {type}
           </span>
           <Link
@@ -39,7 +39,7 @@ const Project = ({ title, type, img, link, github }: ProjectProps) => {
             rel='noopener noreferrer'
             className='hover:underline underline-offset-2'
           >
-            <h2 className='w-full my-2 text-3xl font-bold text-left'>
+            <h2 className='w-full my-2 text-3xl font-bold text-left lg:text-2xl'>
               {title}
             </h2>
           </Link>
@@ -48,7 +48,7 @@ const Project = ({ title, type, img, link, github }: ProjectProps) => {
               href={link}
               target='_blank'
               rel='noopener noreferrer'
-              className='text-lg font-semibold underline'
+              className='text-lg font-semibold underline md:text-base'
             >
               Visit
             </Link>
