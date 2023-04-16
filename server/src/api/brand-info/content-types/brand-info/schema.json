@@ -16,9 +16,7 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
     "socialLinks": {
       "displayName": "socialLink",
@@ -33,9 +31,6 @@
     "brandName": {
       "type": "string",
       "required": true
-    },
-    "address": {
-      "type": "string"
     }
   }
 }
