@@ -32,8 +32,8 @@ const FeaturedProject = ({
           <Image
             src={img}
             alt={title}
-            width={1000}
-            height={1000}
+            width={500}
+            height={500}
             className='w-full h-auto'
             priority
             sizes='(max-width: 768px) 100vw,(max-width:1200px) 50vw, 50vw'

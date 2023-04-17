@@ -47,8 +47,8 @@ const Posts = ({ posts, title }: Posts) => {
                   <Image
                     src={cover}
                     alt={title}
-                    width={1000}
-                    height={1000}
+                    width={500}
+                    height={500}
                     priority
                     sizes='(max-width: 768px) 100vw,(max-width:1200px) 50vw, 50vw'
                     className='w-full h-auto'

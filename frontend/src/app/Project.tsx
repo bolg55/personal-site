@@ -24,8 +24,8 @@ const Project = ({ title, type, img, link, github }: ProjectProps) => {
           <Image
             src={img}
             alt={title}
-            width={1000}
-            height={1000}
+            width={500}
+            height={500}
             className='w-full h-auto'
           />
         </Link>

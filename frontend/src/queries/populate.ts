@@ -71,7 +71,7 @@ export const aboutQuery = {
   next: { revalidate: 3600 },
   populate: {
     image: {
-      fields: ['formats.large', 'url', 'alternativeText'],
+      fields: ['formats.medium', 'url', 'alternativeText'],
     },
   },
 };
