@@ -6,7 +6,7 @@ interface PostProps {
   lastModified: string;
 }
 
-export const sitemap = async () => {
+const sitemap = async () => {
   const allPosts = await fetchAPI('/posts');
 
   const posts = allPosts.data.map((post: PostProps) => ({
@@ -24,3 +24,5 @@ export const sitemap = async () => {
 
   return [...posts, ...routes];
 };
+
+export default sitemap;
