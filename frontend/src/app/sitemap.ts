@@ -17,7 +17,7 @@ const sitemap = async () => {
 
   const routes = ['', '/about', '/contact', '/blog', '/blog/*'].map(
     (route) => ({
-      url: `https://www.kellenbolger.ca/${route}`,
+      url: `https://www.kellenbolger.ca${route}`,
       lastModified: new Date().toISOString(),
     })
   );
