@@ -5,7 +5,7 @@ import { Media } from '@/lib/media';
 import { motion, useScroll } from 'framer-motion';
 import { useRef } from 'react';
 import Button from './Button';
-import { HiOutlineBriefcase, HiOutlineCloudArrowDown } from 'react-icons/hi2';
+import { HiOutlineCloudArrowDown } from 'react-icons/hi2';
 import Link from 'next/link';
 
 interface Job {
