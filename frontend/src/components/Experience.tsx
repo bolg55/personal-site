@@ -26,7 +26,7 @@ const Experience = ({ jobs, resume }: Job) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start end', 'center start'],
+    offset: ['start center', 'end end'],
   });
 
   return (
