@@ -10,7 +10,7 @@ module.exports = (config, { strapi }) => {
       Hero: {
         populate: {
           image: {
-            fields: ["formats.large", "url", "alternativeText"],
+            fields: ["formats.medium", "url", "alternativeText"],
           },
           buttons: {
             fields: ["label", "url", "isPrimary"],
@@ -32,7 +32,7 @@ module.exports = (config, { strapi }) => {
             populate: {
               fields: ["title", "slug", "excerpt"],
               cover: {
-                fields: ["formats.medium", "url", "alternativeText"],
+                fields: ["formats.small", "url", "alternativeText"],
               },
               tags: true,
               seo: true,
