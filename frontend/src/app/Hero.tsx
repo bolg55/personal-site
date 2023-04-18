@@ -48,7 +48,7 @@ const Hero = ({ hero }: HeroProps) => {
           <p className='my-4 text-base font-medium text-dark dark:text-light md:text-sm sm:text-xs'>
             {subheading}
           </p>
-          <div className='flex items-center self-start mt-2 space-x-2 lg:self-center'>
+          <div className='flex items-center self-start mt-4 lg:self-center'>
             {buttons.map((link) => (
               <HeroButton
                 key={link.id}
