@@ -5,7 +5,7 @@ module.exports = {
     try {
       await strapi.plugins["email"].services.email.send({
         to: "kellen@kellenbolger.ca",
-        from: result.email,
+        from: "kellen@kellenbolger.ca",
         subject: `[CONTACT FORM] ${result.name}`,
         replyTo: result.email,
         text: `New message from ${result.name} (${result.email}):\n\n
