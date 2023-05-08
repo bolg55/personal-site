@@ -34,4 +34,4 @@ For more, check out the site!
 
 - [**Vercel**](https://vercel.com/) - Vercel is a cloud platform for static sites and Serverless Functions. It is a great way to build a Jamstack application.
 
-- [**Digital Ocean**](https://www.digitalocean.com/) - Digital Ocean is a cloud platform that makes it easy to deploy and scale applications of any size, providing developers the simplest path to getting their projects to market.
+- [**Railway**](https://www.railway.app) - Railway is a cloud platform that makes it easy to deploy and scale applications of any size, providing developers the simplest path to getting their projects to market.
