@@ -15,7 +15,8 @@
     "title": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": true,
+      "pluginOptions": {}
     },
     "slug": {
       "type": "uid",
@@ -24,7 +25,8 @@
     },
     "content": {
       "type": "richtext",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
     "cover": {
       "type": "media",
@@ -33,7 +35,8 @@
       "allowedTypes": [
         "images",
         "videos"
-      ]
+      ],
+      "pluginOptions": {}
     },
     "authors": {
       "type": "relation",
@@ -48,11 +51,13 @@
     "seo": {
       "type": "component",
       "repeatable": false,
-      "component": "seo.seo-information"
+      "component": "seo.seo-information",
+      "pluginOptions": {}
     },
     "excerpt": {
       "type": "text",
-      "maxLength": 150
+      "maxLength": 150,
+      "pluginOptions": {}
     }
   }
 }
