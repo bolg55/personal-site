@@ -1,5 +1,5 @@
 import './globals.css';
-import { Montserrat } from 'next/font/google';
+import { montserrat } from './fonts';
 import { fetchAPI } from '@/lib/api';
 import { footerQuery, headerQuery } from '@/queries/populate';
 import Header from './Header';
@@ -61,12 +61,6 @@ export const metadata: Metadata = {
   robots: {},
 };
 
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-montserrat',
-});
-
 export default async function RootLayout({
   children,
 }: {
@@ -93,7 +87,7 @@ export default async function RootLayout({
   const { url: logoUrl } = logo.image.data.attributes;
 
   return (
-    <html lang='en' className={`${montserrat.variable}`}>
+    <html lang='en' className={`${montserrat.className}`}>
       <link
         rel='apple-touch-icon'
         sizes='180x180'
