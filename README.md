@@ -14,6 +14,8 @@ When I am not working on Action Backers, or for Strapi as a Solutions Engineer, 
 
 - [**Action Backers**](https://actionbackers.com) - Action Backers is an innovative sports betting analytics platform that can help you increase your winnings and make more informed decisions. Our cutting-edge data and analytics tools provide valuable insights that can give you an edge in the competitive world of sports betting. I'm proud to say that Action Backers is a platform that I personally built from the ground up, with a commitment to excellence and a passion for sports betting.
 
+- [**Cooper & Adlys**](https://cooperadlys.ca) - Cooper & Adlys is a local plumbing and heating company based in Elmira, Ontario. The site focuses on providing information about the company, and the services they offer. It also provides a way for customers to get in touch with the company. A lot of attention was paid to ensuring the site was extremely fast, and that it was optimized for SEO. Built with Astro, a bit of React, and Tailwind.
+
 - [**SaaS Starter**](https://github.com/bolg55/SaaS-Starter) - A SaaS starter kit built with Next.js, Tailwind, Prisma,[Auth.js](https://authjs.dev/), Typescript and Stripe.It is a fully functional SaaS starter kit that you can use to build your own SaaS project. It is also a great way to learn more about the Jamstack.
 
 - [**Notflix. A Netflix clone.**](https://notflix-omega.vercel.app/) - A Netflix clone built with React, Tailwind and the [TMDB API](https://developers.themoviedb.org/3/getting-started/introduction). This project was built as a way to better understand responsive design, and to learn more about React and Tailwind. You can view movie trailers, search by category etc.
