@@ -1,7 +1,7 @@
 module.exports = ({ env }) => ({
+  url: env(`https://${RAILWAY_STATIC_URL}`, `http://${RAILWAY_STATIC_URL}`),
   host: env("HOST", "0.0.0.0"),
   port: env.int("PORT", 1337),
-  url: env("RAILWAY_STATIC_URL"),
   app: {
     keys: env.array("APP_KEYS"),
   },
