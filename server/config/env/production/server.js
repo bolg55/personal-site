@@ -1,5 +1,8 @@
 module.exports = ({ env }) => ({
-  url: env(`https://${RAILWAY_STATIC_URL}`, `http://${RAILWAY_STATIC_URL}`),
+  url: env(
+    `https://${RAILWAY_STATIC_URL}`,
+    "https://portfolio-production-14e3.up.railway.app"
+  ),
   host: env("HOST", "0.0.0.0"),
   port: env.int("PORT", 1337),
 
